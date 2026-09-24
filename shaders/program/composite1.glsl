@@ -44,8 +44,11 @@ float computeExposure() {
         }
     }
     float avgLum = exp2(logSum / wSum);
-    float target = clamp(0.16 / avgLum, 0.3, 14.0);
-    target = pow(target, 0.8);
+    // Partial adaptation keeps nights and caves darker than a full "gray world" exposure.
+    float target = clamp(pow(0.16 / avgLum, 0.72), 0.35, 4.0);
+    #if !defined DIM_OVERWORLD
+    target = min(target, 2.0);
+    #endif
 
     float prev = texelFetch(colortex7, ivec2(0), 0).r;
     if (!(prev > 0.0) || prev > 100.0) prev = target;

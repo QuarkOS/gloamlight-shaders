@@ -107,7 +107,7 @@ vec3 atmosphere(vec3 rd, vec3 sunDir, vec3 moonDir, int steps, out vec3 viewT) {
     col += vec3(0.0006, 0.0009, 0.0016) * MOON_BRIGHTNESS; // airglow floor so nights are never pitch black
 
     float rainGray = luminance(col);
-    col = mix(col, vec3(rainGray) * vec3(0.9, 0.95, 1.05), rainStrength * 0.75) * (1.0 - rainStrength * 0.55);
+    col = mix(col, vec3(rainGray) * vec3(0.86, 0.93, 1.06), rainStrength * 0.8) * (1.0 - rainStrength * 0.55);
     return col;
 }
 
@@ -134,7 +134,9 @@ vec3 getSkyAmbient(vec3 sunDir, vec3 moonDir) {
     vec3 up = atmosphere(vec3(0.0, 1.0, 0.0), sunDir, moonDir, 6);
     vec3 toward = atmosphere(normalize(h + vec3(0.0, 0.6, 0.0)), sunDir, moonDir, 6);
     vec3 away = atmosphere(normalize(-h + vec3(0.0, 0.6, 0.0)), sunDir, moonDir, 6);
-    vec3 amb = (up * 0.5 + toward * 0.25 + away * 0.25) * PI * 0.9;
+    vec3 amb = (up * 0.5 + toward * 0.25 + away * 0.25) * PI * 0.8;
+    // Bounce light from the ground warms and desaturates the pure sky dome color.
+    amb = mix(vec3(luminance(amb)) * vec3(1.05, 1.0, 0.92), amb, 0.7);
     return amb * AMBIENT_BRIGHTNESS;
 }
 

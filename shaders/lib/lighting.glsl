@@ -132,11 +132,13 @@ vec3 shadeSurface(inout SurfaceData s, vec3 lightDir, vec3 lightCol, vec3 ambCol
     #endif
 
     #if defined RAIN_WETNESS && defined DIM_OVERWORLD
-    float fres = fresnelSchlick(saturate(dot(N, V)), F0);
-    color += ambCol * skyVis * fres * wet * 0.35;
+    if (!plant && !leaves) {
+        float fres = fresnelSchlick(saturate(dot(N, V)), F0);
+        color += ambCol * skyVis * fres * wet * (1.0 - roughness) * 0.5;
+    }
     #endif
 
-    color += s.albedo * s.emission * 4.0 * EMISSIVE_BRIGHTNESS;
+    color += s.albedo * s.emission * 3.0 * EMISSIVE_BRIGHTNESS;
     return color;
 }
 

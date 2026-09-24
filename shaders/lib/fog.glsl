@@ -109,10 +109,10 @@ vec3 applyWaterFog(vec3 color, float dist, vec3 lightCol, vec3 ambCol, float sky
 }
 
 vec3 applyNetherFog(vec3 color, vec3 playerEnd, float dist) {
-    vec3 fogCol = toLinear(fogColor) * 0.55 + vec3(0.012, 0.004, 0.002);
+    vec3 fogCol = toLinear(fogColor) * 0.3 + vec3(0.01, 0.004, 0.002);
     float y = cameraPosition.y + playerEnd.y * 0.5;
     float lavaHaze = 1.0 + 1.2 * smoothstep(48.0, 28.0, y);
-    float dens = 0.011 * NETHER_FOG_DENSITY * lavaHaze;
+    float dens = 0.0065 * NETHER_FOG_DENSITY * lavaHaze;
     float T = exp(-dens * dist);
     // Smoky, slowly drifting density variation.
     vec3 wp = cameraPosition + playerEnd * 0.35;

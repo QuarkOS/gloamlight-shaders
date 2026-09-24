@@ -9,7 +9,7 @@ const vec3 END_AMBIENT = vec3(0.06, 0.045, 0.1);
 void getDimensionLight(out vec3 lightCol, out vec3 ambCol) {
     #if defined DIM_NETHER
     lightCol = vec3(0.0);
-    ambCol = toLinear(fogColor) * 0.4 + vec3(0.07, 0.04, 0.03);
+    ambCol = toLinear(fogColor) * 0.5 + vec3(0.11, 0.07, 0.05);
     ambCol *= AMBIENT_BRIGHTNESS;
     #elif defined DIM_END
     lightCol = END_LIGHT_COLOR * 0.9 * SUN_BRIGHTNESS;
@@ -30,7 +30,7 @@ vec3 endSky(vec3 dir, vec3 lightDir) {
     float n = valueNoise3(q) * 0.55 + valueNoise3(q * 2.3 + 7.1) * 0.3 + valueNoise3(q * 5.1 - 3.3) * 0.15;
     float band = exp(-sq(dir.y * 2.2 + (n - 0.5) * 1.6));
     vec3 nebulaCol = mix(vec3(0.3, 0.07, 0.42), vec3(0.04, 0.22, 0.32), valueNoise3(dir * 1.7 + 2.0));
-    col += nebulaCol * smoothstep(0.35, 0.95, n) * band * 0.35;
+    col += nebulaCol * smoothstep(0.3, 0.85, n) * band * 0.6;
 
     vec3 cell = floor(dir * 160.0);
     float starSeed = hash13(cell);

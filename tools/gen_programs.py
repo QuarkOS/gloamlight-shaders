@@ -19,6 +19,7 @@ PROGRAMS = {
     "gbuffers_clouds": ("gbuffers_forward", ["G_CLOUDS"]),
     "gbuffers_beaconbeam": ("gbuffers_forward", ["G_EMISSIVE"]),
     "gbuffers_spidereyes": ("gbuffers_forward", ["G_EMISSIVE"]),
+    "gbuffers_lightning": ("gbuffers_forward", ["G_EMISSIVE"]),
     "gbuffers_terrain": ("gbuffers_solid", ["G_TERRAIN"]),
     "gbuffers_block": ("gbuffers_solid", ["G_BLOCK"]),
     "gbuffers_entities": ("gbuffers_solid", ["G_ENTITIES"]),
