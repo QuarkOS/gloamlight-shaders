@@ -1,0 +1,126 @@
+profile=Quality Profile
+profile.LOW=Low
+profile.MEDIUM=Medium
+profile.HIGH=High
+profile.comment=Low: fast shadows, flat fog, light clouds. Medium: balanced default. High: 4K shadows, dense volumetrics and clouds.
+
+screen.LIGHTING=Lighting
+screen.SHADOWS=Shadows
+screen.ATMOSPHERE=Sky & Clouds
+screen.FOG=Fog & Volumetrics
+screen.WATER=Water
+screen.WAVING=Waving Foliage
+screen.POST=Camera & Color
+
+# Shadows
+option.shadowMapResolution=Shadow Resolution
+option.shadowMapResolution.comment=Resolution of the sun/moon shadow map. Higher is sharper and slower.
+option.shadowDistance=Shadow Distance
+option.shadowDistance.comment=How far (in blocks) shadows are rendered.
+option.SHADOW_SAMPLES=Shadow Filter Samples
+option.SHADOW_SAMPLES.comment=Samples used to soften shadow edges. More samples = smoother penumbrae.
+option.SHADOW_SOFTNESS=Shadow Softness
+option.PCSS=Contact-Hardening Shadows
+option.PCSS.comment=Shadows are sharp near the caster and soften with distance (PCSS).
+option.COLORED_SHADOWS=Colored Shadows
+option.COLORED_SHADOWS.comment=Stained glass and other translucent blocks tint the light passing through.
+option.SHADOW_DISTORTION=Shadow Distortion
+option.SHADOW_DISTORTION.comment=Concentrates shadow detail near the player. Higher = sharper nearby, blurrier far away.
+option.sunPathRotation=Sun Path Angle
+option.sunPathRotation.comment=Tilts the sun's arc across the sky so shadows are never perfectly axis-aligned.
+
+# Lighting
+option.SUN_BRIGHTNESS=Sunlight
+option.MOON_BRIGHTNESS=Moonlight
+option.AMBIENT_BRIGHTNESS=Sky Ambient
+option.MIN_LIGHT=Cave Minimum Light
+option.MIN_LIGHT.comment=Faint light floor so unlit caves are not pitch black.
+option.BLOCKLIGHT_BRIGHTNESS=Torch Light
+option.BLOCKLIGHT_WARMTH=Torch Warmth
+option.BLOCKLIGHT_WARMTH.comment=0 = neutral white block light, 1 = deep orange candle light.
+option.EMISSIVE_BRIGHTNESS=Emissive Glow
+option.EMISSIVE_BRIGHTNESS.comment=Brightness of torches, lanterns, glowstone, lava and other light sources.
+option.HANDHELD_LIGHT=Handheld Light
+option.HANDHELD_LIGHT.comment=Holding a light source lights up your surroundings.
+option.FOLIAGE_SSS=Foliage Translucency
+option.FOLIAGE_SSS.comment=Sunlight glowing through leaves and grass when looking toward the sun.
+option.ambientOcclusionLevel=Vanilla AO
+option.SSAO=Screen-Space AO
+option.SSAO.comment=Extra contact shadows in corners and crevices.
+option.SSAO_STRENGTH=SSAO Strength
+option.SSAO_SAMPLES=SSAO Samples
+option.RAIN_WETNESS=Rain Wetness
+option.RAIN_WETNESS.comment=Surfaces exposed to the sky darken and turn glossy while it rains.
+option.PUDDLES=Puddles
+option.PUDDLES.comment=Mirror-like puddles form on flat ground in the rain.
+
+# Sky & clouds
+option.SKY_STEPS=Sky Quality
+option.SKY_STEPS.comment=Ray-march steps for atmospheric scattering.
+option.SUN_SIZE=Sun Size
+option.STAR_BRIGHTNESS=Star Brightness
+option.CLOUD_QUALITY=Clouds
+option.CLOUD_QUALITY.comment=Volumetric cloud quality. Off disables them entirely.
+value.CLOUD_QUALITY.0=Off
+value.CLOUD_QUALITY.1=Low
+value.CLOUD_QUALITY.2=Medium
+value.CLOUD_QUALITY.3=High
+option.CLOUD_COVERAGE=Cloud Coverage
+option.CLOUD_ALTITUDE=Cloud Altitude
+option.CLOUD_THICKNESS=Cloud Thickness
+option.CLOUD_SPEED=Cloud Speed
+option.VANILLA_CLOUDS=Vanilla Clouds
+option.VANILLA_CLOUDS.comment=Also draw Minecraft's blocky clouds (shaded to match the sky).
+
+# Fog
+option.VOLUMETRIC_LIGHT=Volumetric Light
+option.VOLUMETRIC_LIGHT.comment=Ray-marched fog with light shafts cast through trees, caves and terrain.
+option.VL_STEPS=Volumetric Quality
+option.VL_STRENGTH=Light Shaft Strength
+option.FOG_DENSITY=Fog Density
+option.MORNING_FOG=Morning Mist
+option.MORNING_FOG.comment=Extra low-lying mist around sunrise (and, more lightly, sunset).
+option.RAIN_FOG=Rain Fog
+option.BORDER_FOG=Border Fog
+option.BORDER_FOG.comment=Fades terrain into the sky at the edge of render distance.
+option.NETHER_FOG_DENSITY=Nether Haze
+option.END_FOG_DENSITY=End Fog
+
+# Water
+option.WATER_WAVES=Water Waves
+option.WATER_WAVE_HEIGHT=Wave Height
+option.WATER_WAVE_SPEED=Wave Speed
+option.WATER_REFRACTION=Refraction
+option.WATER_SSR=Screen-Space Reflections
+option.WATER_SSR.comment=Water reflects terrain on screen; the sky is always reflected.
+option.SSR_STEPS=Reflection Quality
+option.WATER_CLARITY=Water Clarity
+option.WATER_CLARITY.comment=How far you can see into water before it turns deep blue-green.
+option.UNDERWATER_FOG=Underwater Fog
+
+# Waving
+option.WAVING_PLANTS=Waving Plants
+option.WAVING_LEAVES=Waving Leaves
+option.WAVE_AMPLITUDE=Wave Strength
+option.WAVE_SPEED=Wave Speed
+
+# Post
+option.BLOOM=Bloom
+option.BLOOM_STRENGTH=Bloom Strength
+option.AUTO_EXPOSURE=Auto Exposure
+option.AUTO_EXPOSURE.comment=Eyes adapt when moving between bright and dark places.
+option.EXPOSURE=Exposure Bias
+option.EXPOSURE.comment=In stops (EV). Applied on top of auto exposure.
+option.TONEMAP=Tonemapper
+value.TONEMAP.0=ACES (fitted)
+value.TONEMAP.1=ACES (approximate)
+value.TONEMAP.2=Soft Reinhard
+option.WHITE_BALANCE=White Balance
+option.WHITE_BALANCE.comment=Scene white point in Kelvin. Lower values look cooler, higher values warmer.
+option.SATURATION=Saturation
+option.VIBRANCE=Vibrance
+option.CONTRAST=Contrast
+option.SHADOW_TINT=Split Toning
+option.SHADOW_TINT.comment=Cool shadows and warm highlights (dimension-specific tints in the Nether and End).
+option.VIGNETTE=Vignette
+option.VIGNETTE_STRENGTH=Vignette Strength
